@@ -1,5 +1,7 @@
 package jm.task.core.jdbc.model;
 
+// все правильно должно быть по шаблону я проверил и даже по alt+insert
+
 import javax.persistence.*;
 import java.util.Objects;
 
@@ -63,16 +65,6 @@ public class User {
     }
 
     @Override
-    public String toString() {
-        return "User{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", age=" + age +
-                '}';
-    }
-
-    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
@@ -83,5 +75,15 @@ public class User {
     @Override
     public int hashCode() {
         return Objects.hash(id, name, lastName, age);
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", age=" + age +
+                '}';
     }
 }
