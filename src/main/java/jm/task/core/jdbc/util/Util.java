@@ -13,6 +13,8 @@ public class Util {
     private static final String DB_USERNAME = "root";
     private static final String DB_PASSWORD = "admin";
 
+    private static final SessionFactory sessionFactory = buildSessionFactory();
+
     public static Connection getConnection() {
         Connection connection = null;
         try {
@@ -25,8 +27,6 @@ public class Util {
         }
         return connection;
     }
-
-    private static final SessionFactory sessionFactory = buildSessionFactory();
 
     private static SessionFactory buildSessionFactory() {
         SessionFactory sessionFactory = new Configuration()
